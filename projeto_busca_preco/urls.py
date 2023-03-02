@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from app_busca_preco import views
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", views.pesquisar, name='pesquisar'),
+    path("resultados/", views.exibir_resultados, name='resultados')
 ]
