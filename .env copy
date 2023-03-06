@@ -1,0 +1,8 @@
+
+# chave da maquina virtual
+SECRET_KEY = "sua chave da maquina virtual"
+
+# Dados do POSTGRESS
+PASSWORD = 'sua senha do banco de dados'
+
+
