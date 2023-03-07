@@ -47,3 +47,15 @@ https://pypi.org/project/psycopg2/
 # Agora rodaremos o migrations para criar o banco na nuvem
 py manage.py makemigrations
 py manage.py migrate
+
+
+
+# utilizaremos um outro banco de imagens
+https://imgbb.com/
+
+# tem que pegar o link direto da img
+    * como fazer isso
+        -> faz upload da img
+            -> depois copia o link e joga na url
+                -> clique com o botão direito e abrir em outra guia
+                    -> copia a url e coloca no html img
