@@ -59,3 +59,5 @@ https://imgbb.com/
             -> depois copia o link e joga na url
                 -> clique com o botão direito e abrir em outra guia
                     -> copia a url e coloca no html img
+
+windows + .    abre os emojes

@@ -44,7 +44,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # my apps
-    'app_busca_preco'
+    'app_busca_preco',
+
+    #instalação padrao
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [

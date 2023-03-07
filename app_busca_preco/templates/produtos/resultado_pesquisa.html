@@ -1,0 +1,31 @@
+{% extends 'produtos/base.html' %}
+
+{% block conteudo %}
+
+{% load humanize %}
+<form action="{% url 'resultados' %}" method="POST"> {% csrf_token %}
+    <div class="centralizar">
+        <h1> Pesquisar</h1>
+        <input type="text" class="form-control-lg" name="produto" placeholder="pesquisar...">
+        <input type="button" class="form-control-lg" value="Buscar 🔍🔎">
+    </div>
+</form>
+
+    <table class='table table-light table strip'>
+        <tr>
+            <th>Produto</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Site</th>
+            <th>Data Cotação</th>
+        </tr>
+    </table>
+
+    {% for dados in dados %}
+        <td> {{dados.link_imagem}} </td>
+        <td> {{dados.nome}} </td>
+        <td> {{dados.preco | intcomma }} </td>
+        <td> {{dados.site}} </td>
+        <td> {{dados.data_cotacao}} </td>
+    {% endfor %}
+{% endblock  %}
