@@ -61,3 +61,10 @@ https://imgbb.com/
                     -> copia a url e coloca no html img
 
 windows + .    abre os emojes
+
+
+
+
+
+# inicializando a parte do backend
+
