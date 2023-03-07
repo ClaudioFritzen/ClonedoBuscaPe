@@ -3,29 +3,35 @@
 {% block conteudo %}
 
 {% load humanize %}
-<form action="{% url 'resultados' %}" method="POST"> {% csrf_token %}
+<form style='text-align: center; ' action="{% url 'resultados' %}" method="POST"> {% csrf_token %}
     <div class="centralizar">
-        <h1> Pesquisar</h1>
+        <h1 class='text-align: center;'> Pesquisar</h1>
         <input type="text" class="form-control-lg" name="produto" placeholder="pesquisar...">
         <input type="button" class="form-control-lg" value="Buscar 🔍🔎">
     </div>
 </form>
+    <div class='container'>
+        <table class='table table-light table strip'>
+            <tr>
+                <th>Produto</th>
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Site</th>
+                <th>Data Cotação</th>
+            </tr>
+    
+            <!-- buscando os dados do banco-->
+            {% for dados in dados %}
+            <td> <img style='max-height: 150px; max-width: 150px;' src='{{dados.link_imagem}}' alt=''></td>
+            <td> {{dados.nome}} </td>
+            <td> R${{dados.preco | intcomma }} </td>
+            <td> {{dados.site}} </td>
+            <!-- fazendo a formatação da data-->
+            <td> {{dados.data_cotacao | date:"d/m/Y"}}  </td>
+        {% endfor %}
+        </table>
+    </div>
+    
 
-    <table class='table table-light table strip'>
-        <tr>
-            <th>Produto</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Site</th>
-            <th>Data Cotação</th>
-        </tr>
-    </table>
-
-    {% for dados in dados %}
-        <td> {{dados.link_imagem}} </td>
-        <td> {{dados.nome}} </td>
-        <td> {{dados.preco | intcomma }} </td>
-        <td> {{dados.site}} </td>
-        <td> {{dados.data_cotacao}} </td>
-    {% endfor %}
+    
 {% endblock  %}
